@@ -16,35 +16,37 @@ public class KeramikHargaTerbaik {
      */
             
     public static void main(String[] args) {
-        // TODO code application logic here
-        Perhitungan keramikA = new Perhitungan();
+        // KeramikHargaTerbaik v.2
+        
+        /* New feature update
+        - input nilai mudah
+        - inisiasi lebih ringkas
+        - 2 cara input nilai
+        1. jika diketahui kedua sisi keramik
+        cara nya dengan memasukkan 4 argument:
+        Perhitungan ... = new Perhitungan(sisi1(cm), sisi2(cm), harga keramik /box, jumlah keramik /box);
+        2. jika diketahui luas keramik
+        cara nya dengan memasukkan 3 argument:
+        Perhitungan ... = new Perhitungan(luas keramik, harga keramik /box, jumlah keramik /box);
+        */
+        
+        // menggunakan cara 1        
+        Perhitungan keramikA = new Perhitungan(30,30,54000,10);
         keramikA.namaKeramik = "Keramik A";
-        keramikA.sisi1 = 30;
-        keramikA.sisi2 = 30;
-        keramikA.hargaPerBox = 54000;
-        keramikA.jumlahPerBox = 10;
-        keramikA.hasil();
+        keramikA.hasil();   
         
         System.out.println("\n");
-        Perhitungan keramikB = new Perhitungan();
+        // menggunakan cara 2        
+        Perhitungan keramikB = new Perhitungan(1600, 65000, 5);
         keramikB.namaKeramik = "Keramik B";
-        keramikB.sisi1 = 40;
-        keramikB.sisi2 = 40;
-        keramikB.hargaPerBox = 65000;
-        keramikB.jumlahPerBox = 5;
         keramikB.hasil();
         
         System.out.println("\n");
-        Perhitungan keramikC = new Perhitungan();
+        
+        Perhitungan keramikC = new Perhitungan(1200, 60000, 8);
         keramikC.namaKeramik = "Keramik C";
-        keramikC.sisi1 = 30;
-        keramikC.sisi2 = 40;
-        keramikC.hargaPerBox = 60000;
-        keramikC.jumlahPerBox = 8;
         keramikC.hasil();
-        
-        
-        
+     
     }
     
 }

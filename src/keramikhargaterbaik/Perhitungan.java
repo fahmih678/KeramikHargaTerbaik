@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package keramikhargaterbaik;
-
 /**
  *
  * @author Fahmi Habibi
@@ -16,20 +15,29 @@ public class Perhitungan {
     int sisi2;
     int hargaPerBox;
     int jumlahPerBox;
+    int luasKeramik;
     
-    int hitungLuasKeramik(){
-        int luas;
-        luas = this.sisi1 * this.sisi2;
-        
-        return luas;
+    // Constructor1, 4 argument 
+    Perhitungan(int sisi1, int sisi2 , int harga, int jumlah1box){
+        this.sisi1 = sisi1;
+        this.sisi2 = sisi2;
+        // menghitung luas keramik
+        this.luasKeramik = sisi1 * sisi2;
+        this.hargaPerBox = harga;
+        this.jumlahPerBox = jumlah1box;
     }
-    
+    //Constructor2, 3 argument 
+    Perhitungan(int luaskeramik, int harga, int jumlah1box){
+        this.luasKeramik = luaskeramik;
+        this.hargaPerBox = harga;
+        this.jumlahPerBox = jumlah1box;
+    }
+
     int pcsDibutuhkan(){
         int pcs;
         double pcs2;
-        int luasKeramik = this.sisi1 * this.sisi2;
-        pcs2 = 1000000 / (double) luasKeramik;
-        pcs = 1000000 / luasKeramik;
+        pcs2 = 1000000 / (double) this.luasKeramik;
+        pcs = 1000000 / this.luasKeramik;
         if( pcs2 != pcs){
             pcs = pcs+1;
             return pcs;
@@ -60,8 +68,7 @@ public class Perhitungan {
     
     void hasil(){
         System.out.println("Nama Keramik: " + this.namaKeramik);
-        /*System.out.println("Luas area yang akan dipasang keramik adalah 100 meter persegi / 1000000 cm persegi");*/
-        System.out.println("Luas 1 keramik : " + hitungLuasKeramik() + " cm persegi");
+        System.out.println("Luas 1 keramik : " + this.luasKeramik + " cm persegi");
         System.out.println("Keramik yang dibutuhkan untuk luas 100 m persegi sekitar " + pcsDibutuhkan() + " pcs atau sekitar " + boxDibutuhkan()+ " box keramik");
         System.out.println("Harga "+ boxDibutuhkan()+ " box keramik adalah " + hargaTotal() + " rupiah");
     }
